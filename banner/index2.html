@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jalusi Holdings - Business Solutions</title>
+    <style>
+        :root {
+            --primary-color: #1a3a1f; /* Dark green primary */
+            --secondary-color: #2d5a34; /* Medium green */
+            --accent-color: #4a8c55; /* Light green accent */
+            --light-color: #ffffff;
+            --dark-color: #333333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+            line-height: 1.6;
+            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.92);
+            padding: 40px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .services-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .service-card {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-content {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card img.logo {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 5px;
+            background: white;
+            border: 2px solid #eee;
+        }
+
+        .service-card h2 {
+            font-size: 1.6em;
+            margin: 0 0 15px;
+            color: var(--dark-color);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+            flex: 1;
+        }
+
+        .service-card ul li {
+            margin: 12px 0;
+            padding: 8px 0;
+            position: relative;
+            font-weight: 500;
+            color: #555;
+            padding-left: 20px;
+        }
+
+        .service-card ul li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 15px;
+            text-align: center;
+            align-self: center;
+        }
+
+        .read-more-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .service-info {
+            display: none;
+            padding: 25px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #eee;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .service-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .service-info p {
+            font-size: 1em;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 900px) {
+            .services-row {
+                flex-direction: column;
+            }
+            
+            .service-card {
+                max-width: 100%;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        footer p {
+            margin: 0;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jalusi Holdings</h1>
+        <p>Comprehensive business solutions for the modern enterprise</p>
+    </header>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="services-row">
+                <div class="service-card">
+                    <div class="card-content">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80" alt="Consulting Logo" class="logo">
+                        <h2>Jalusi Consulting</h2>
+                        <ul>
+                            <li>Accounting Services</li>
+                            <li>Strategic Recruitment</li>
+                            <li>BBBEE Compliance</li>
+                            <li>Enterprise Development</li>
+                        </ul>
+                        <button class="read-more-btn" onclick="toggleInfo('consulting-info', this)">Read More</button>
+                    </div>
+                    <div id="consulting-info" class="service-info">
+                        <h3>Expert Business Consulting</h3>
+                        <p>Jalusi Consulting provides comprehensive business solutions including professional accounting services, strategic recruitment, BBBEE compliance consulting, and enterprise development programs. Our team of experts helps businesses navigate complex regulatory environments while optimizing operations for growth and sustainability.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-content">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80" alt="Technology Logo" class="logo">
+                        <h2>Jalusi Tech</h2>
+                        <ul>
+                            <li>ESD Management Systems</li>
+                            <li>SMME Software Solutions</li>
+                            <li>Cloud Hosting Services</li>
+                            <li>Data Center Infrastructure</li>
+                            <li>Microsoft Solutions</li>
+                        </ul>
+                        <button class="read-more-btn" onclick="toggleInfo('tech-info', this)">Read More</button>
+                    </div>
+                    <div id="tech-info" class="service-info">
+                        <h3>Innovative Technology Solutions</h3>
+                        <p>Jalusi Tech delivers cutting-edge technology solutions including custom ESD management systems, specialized software for small and medium enterprises, reliable cloud hosting services, state-of-the-art data center infrastructure, and comprehensive Microsoft package implementations.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-content">
+                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80" alt="Beauty Logo" class="logo">
+                        <h2>Jalusi Beauty</h2>
+                        <ul>
+                            <li>IV Vitamin Therapy</li>
+                            <li>Aesthetic Treatments</li>
+                            <li>Premium Beauty Services</li>
+                        </ul>
+                        <button class="read-more-btn" onclick="toggleInfo('beauty-info', this)">Read More</button>
+                    </div>
+                    <div id="beauty-info" class="service-info">
+                        <h3>Wellness & Aesthetic Excellence</h3>
+                        <p>Jalusi Beauty offers premium wellness and aesthetic services including revitalizing IV vitamin therapy, advanced aesthetic treatments, and comprehensive beauty services. Our certified professionals provide personalized care using the latest techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Jalusi Holdings. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleInfo(id, button) {
+            const info = document.getElementById(id);
+            const allInfos = document.querySelectorAll('.service-info');
+            const allButtons = document.querySelectorAll('.read-more-btn');
+            
+            if (info.style.display === "block") {
+                info.style.display = "none";
+                button.textContent = "Read More";
+                button.style.backgroundColor = "white";
+                button.style.color = "var(--primary-color)";
+                button.style.borderColor = "var(--primary-color)";
+            } else {
+                // Close all other info sections
+                allInfos.forEach(el => el.style.display = "none");
+                
+                // Reset all buttons
+                allButtons.forEach(btn => {
+                    btn.textContent = "Read More";
+                    btn.style.backgroundColor = "white";
+                    btn.style.color = "var(--primary-color)";
+                    btn.style.borderColor = "var(--primary-color)";
+                });
+                
+                // Open selected info and update button
+                info.style.display = "block";
+                button.textContent = "Show Less";
+                button.style.backgroundColor = "var(--primary-color)";
+                button.style.color = "white";
+                button.style.borderColor = "var(--primary-color)";
+                
+                // Scroll to the card if needed
+                info.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+    </script>
+</body>
+</html>
